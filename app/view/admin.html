@@ -1,0 +1,23 @@
+<h1>Gerenciador de Conteúdo</h1>
+<a href="http://localhost:8080/php%20web/index.php?pagina=admin&metodo=create">Criar publicação</a>
+<br>
+<hr>
+<br>
+<br>
+<table border="2">
+    <tr>
+        <th>id</th>
+        <th>título</th>
+        <th>alteração</th>
+        <th>deleção</th>
+    </tr>
+
+    {% for postagem in postagens %}
+    <tr>
+        <th>{{postagem.id}}</th>
+        <th>{{postagem.titulo}}</th>
+        <th><a href="http://localhost:8080/php%20web/index.php?pagina=admin&metodo=change&id={{postagem.id}}">alterar</a></th>
+        <th><a href="http://localhost:8080/php%20web/index.php?pagina=admin&metodo=delete&id={{postagem.id}}">deletar</a></th>
+    </tr>
+    {% endfor %}
+</table>
